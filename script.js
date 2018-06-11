@@ -14,15 +14,12 @@ function getAndPrintHTMLChunks() {
 
     response.on('data', function (data) {
 
-      // string += data.toString();
-      // string += '\n';
       string += data + '\n';
     });
 
-    // response.on('end', function() {
-    //   console.log('Response stream complete.');
-    //   return string;
-    // });
+    response.on('end', function() {
+      console.log(string);
+    });
 
   });
 }
